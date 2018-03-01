@@ -22,7 +22,14 @@
   word-spacing: 0.25em;
   padding: 20px 0px 0px 0px;
   float: left;
+  z-index: 999;
+  text-decoration: none;
   /*background: #e8e8e8;*/
+}
+
+#header a {
+  text-decoration: none;
+  color:inherit;
 }
 
 #sidebar {
@@ -41,6 +48,7 @@
 #filter {
   width: 100%;
   padding-bottom: 10px;
+  /*overflow: hidden;*/
   /*background: #777777;*/
 }
 
@@ -50,12 +58,16 @@
 
 #main {
   width: 50%;
-  padding: 10px;
+  padding: 10px 10px 160px 10px;
   float: left;
   position: relative;
   top:50px;
-  left:36%;
+  left:40%;
   overflow-y:scroll;
+  -webkit-transition: all 0.4s ease;
+  -moz-transition: all 0.4s ease;
+  -o-transition: all 0.4s ease;
+  transition: all 0.4s ease;
   /*background: #e8e8e8;*/
 }
 
@@ -89,6 +101,7 @@ ul {
   /*color: #888888;*/
   color: black;
   text-decoration: none;
+  z-index: 100;
   -webkit-touch-callout: none; /* iOS Safari */
     -webkit-user-select: none; /* Safari */
      -khtml-user-select: none; /* Konqueror HTML */
@@ -113,6 +126,7 @@ ul {
     -moz-transition: all 0.2s ease;
     -o-transition: all 0.2s ease;
     transition: all 0.2s ease;
+    overflow: hidden;
 }
 
 .proj h1 {
@@ -137,6 +151,16 @@ ul {
 
 .proj img {
   margin-top: 50px;
+  width: 100%;
+}
+
+.projVid {
+  margin-top: 50px;
+  width: 100%;
+  -webkit-transition: all 0.2s ease;
+  -moz-transition: all 0.2s ease;
+  -o-transition: all 0.2s ease;
+  transition: all 0.2s ease;
 }
 
 .fSelect svg {
@@ -151,6 +175,64 @@ ul {
   opacity: 1 !important;
 }
 
+#sidebarIconContainer {
+  float: left;
+  width: 3.5%;
+  -webkit-transition: all 0.4s ease;
+  -moz-transition: all 0.4s ease;
+  -o-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+  opacity: 0;
+}
+
+.sidebarShow {
+  opacity: .5 !important;
+}
+
+@keyframes slideOver {
+  from {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+
+  to {
+    -webkit-transform: translate3d(-35.2%, 0, 0);
+    transform: translate3d(-35.2%, 0, 0);
+  }
+}
+
+.slideOver {
+  -webkit-animation-name: slideOver;
+  animation-name: slideOver;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  -webkit-animation-duration: 0.7s;
+  animation-duration: 0.7s;
+  -webkit-animation-timing-function: ease-in;
+}
+
+@keyframes slideBack {
+  from {
+    -webkit-transform: translate3d(-35.2%, 0, 0);
+    transform: translate3d(-35.2%, 0, 0);
+  }
+
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.slideBack {
+  -webkit-animation-name: slideBack;
+  animation-name: slideBack;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  -webkit-animation-duration: 0.7s;
+  animation-duration: 0.7s;
+  -webkit-animation-timing-function: ease-in;
+}
+
 @media screen and (min-width: 40.5em) { 
 
   #sidebar {
@@ -158,16 +240,36 @@ ul {
   }
 
   #menu {
-    width: 58%;}
+    width: 56%;}
 
   #filter ul{
   /*padding-left: 10px;*/
   }
 
   #filter {
-    width: 34%;
+    width: 36%;
     float: left;
     margin-left: 8%;
     /*margin-right: 16px;*/
   }
+
+/*  #sidebarIconContainer {
+    width: 3.6%;
+  }
+*/
+    @keyframes slideBack {
+      from {
+        -webkit-transform: translate3d(-33.2%, 0, 0);
+        transform: translate3d(-33.2%, 0, 0);
+    }
+}
+    @keyframes slideOver {
+        to {
+    -webkit-transform: translate3d(-33.2%, 0, 0);
+    transform: translate3d(-33.2%, 0, 0);
+  }
+}
+
+
+
 }

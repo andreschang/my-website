@@ -1,45 +1,40 @@
 
-var iconBox = SVG("menuIcon").size(100,100),
-icon = iconBox.rect(30,30).fill('yellow')
+var stateModule = (function () {
+    var state;
+    var pub = {};
 
-// Show/hide menu
+    pub.changeState = function (newstate) {
+        state = newstate;
+        console.log('state changed - '+state);
+    };
 
-$(document).ready(function(){
+    pub.getState = function() {
+        console.log('current state - '+state);
+        return state;
+    }
 
-  function animationClick(trigger, element, animation){
-    element = $(element);
-  trigger = $(trigger);
-    trigger.click(
-        function() {
-            element.addClass('animated ' + animation);          
-            //wait for animation to finish before removing classes
-            window.setTimeout( function(){
-                element.removeClass('animated ' + animation);
-            }, 2000);           
- 
-        });
+    return pub; // expose externally
+}());
+
+stateModule.changeState("shown");
+
+// Set video iFrame size
+function getVidHeight() {
+  var vidHeight = 0.5625*$('.projVid')[0].getBoundingClientRect().width;
+  $(".projVid").height(vidHeight);
 }
 
-  function animationHover(trigger, element, animation){
-    element = $(element);
-    trigger = $(trigger);
-    trigger.hover(
-        function() {
-            element.addClass('animated ' + animation);          
-        },
-        function(){
-            //wait for animation to finish before removing classes
-            window.setTimeout( function(){
-                element.removeClass('animated ' + animation);
-            }, 2000);           
-        });
-}
+getVidHeight()
 
-});
+// Draw sidebar icon
+var iconY = $('#sidebar')[0].getBoundingClientRect().height/3,
+  drawing = SVG("sidebarIconContainer").size(50,100).translate(0,iconY),
+  sidebarIcon = drawing.polygon('10,25 30,50 10,75').fill('blue').addClass('sidebarIcon');
+  // sidebarIcon = drawing.rect(100,100).fill('blue').addClass('sidebarIcon');
+
 
 // Make filter SVGs
-
-var filters = document.getElementById('filter').querySelectorAll('li'),
+var filters = $("#filter").find("li"),
 colors = ['', 'blue', 'red', 'yellow', 'green']
 
 for (i = 1; i < (filters.length); i++) {
@@ -47,10 +42,8 @@ for (i = 1; i < (filters.length); i++) {
     height = elmnt.getBoundingClientRect().height,
     // dY = -.8*height,
     dY = -.5*height,
-    // width = .8*elmnt.querySelector('div').getBoundingClientRect().width;
-    width = 100;
-    console.log(filters[i])
-    console.log(height)
+    fWidth = $("#filter")[0].getBoundingClientRect().width,
+    width = fWidth > 100 ? 100 : fWidth;
 
   var draw = SVG(filters[i]).translate(-2,dY).size(300,50).opacity(0),
     rect = draw.rect(width, .4*height).fill(colors[1]).opacity('1');
@@ -59,7 +52,6 @@ for (i = 1; i < (filters.length); i++) {
 
 
 // Filter by combination of tags
-
 var selectedFilters = []
 
 $(document).ready(function(){
@@ -82,3 +74,86 @@ $(document).ready(function(){
     }
   });
 });
+
+// Animation functions
+// function animationClick(trigger, element, animation){
+//     element = $(element);
+//   trigger = $(trigger);
+//     trigger.click(
+//         function() {
+//             element.addClass('animated ' + animation);          
+//             //wait for animation to finish before removing classes
+//             window.setTimeout( function(){
+//                 element.removeClass('animated ' + animation);
+//             }, 2000);           
+ 
+//         });
+// }
+
+function animationHover(trigger, element, animation){
+    element = $(element);
+    trigger = $(trigger);
+    trigger.hover(
+        function() {
+            element.addClass('animated ' + animation);          
+        },
+        function(){
+            //wait for animation to finish before removing classes
+            window.setTimeout( function(){
+                element.removeClass('animated ' + animation);
+            }, 2000);           
+        });
+}
+
+// Show sidebar icon, hide sidebar
+function sidebarSlideLeft() {
+  stateModule.changeState("transition");
+  $("#sidebarIconContainer").addClass('sidebarShow');
+  $(".sidebarSlide").removeClass('slideBack');         
+  $(".sidebarSlide").addClass('slideOver');
+  $("#main").width('60%');
+  setTimeout( function() {
+      getVidHeight()
+      stateModule.changeState("hidden");
+    }, 700);
+}
+
+function sidebarSlideRight() {
+  stateModule.changeState("transition");
+  $("#sidebarIconContainer").removeClass('sidebarShow');
+  $(".sidebarSlide").removeClass('slideOver');
+  $(".sidebarSlide").addClass('slideBack');
+  $("#main").width('50%');
+  setTimeout( function() {
+      getVidHeight()
+      stateModule.changeState("shown");
+    }, 700);
+}
+
+function hoverIcon() {
+  $('.sidebarIcon').mouseenter( function(event) {
+    var stateOn = stateModule.getState();
+    if (stateOn == "hidden") {
+      console.log('show menu');
+      sidebarSlideRight();
+      // stateModule.changeState("transition");
+      // $(".sidebarSlide").addClass('slideBack');
+      // $(".sidebarSlide").removeClass('slideOver');
+      // $("#sidebarIconContainer").removeClass('sidebarShow');
+      setTimeout( function() {
+        stateModule.changeState("shown");
+      }, 700);
+    }
+  });
+
+  $('#main').mouseenter( function(event) {
+    var stateOff = stateModule.getState();
+    if (stateOff == "shown") {
+      // stateModule.changeState("transition");
+      // $(".sidebarSlide").removeClass('slideBack');
+      sidebarSlideLeft();
+      setTimeout( function() {
+        stateModule.changeState("hidden");
+      }, 700)};
+    }
+  )}
