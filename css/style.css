@@ -206,8 +206,30 @@ ul {
   animation-name: slideOver;
   -webkit-animation-fill-mode: both;
   animation-fill-mode: both;
-  -webkit-animation-duration: 0.7s;
-  animation-duration: 0.7s;
+  -webkit-animation-duration: 0.5s;
+  animation-duration: 0.5s;
+  -webkit-animation-timing-function: ease-in;
+}
+
+@keyframes mainSlideOver {
+  from {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+
+  to {
+    -webkit-transform: translate3d(-40%, 0, 0);
+    transform: translate3d(-40%, 0, 0);
+  }
+}
+
+.mainSlideOver {
+  -webkit-animation-name: mainSlideOver;
+  animation-name: mainSlideOver;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  -webkit-animation-duration: 0.5s;
+  animation-duration: 0.5s;
   -webkit-animation-timing-function: ease-in;
 }
 
@@ -228,8 +250,30 @@ ul {
   animation-name: slideBack;
   -webkit-animation-fill-mode: both;
   animation-fill-mode: both;
-  -webkit-animation-duration: 0.7s;
-  animation-duration: 0.7s;
+  -webkit-animation-duration: 0.5s;
+  animation-duration: 0.5s;
+  -webkit-animation-timing-function: ease-in;
+}
+
+@keyframes mainSlideBack {
+  from {
+    -webkit-transform: translate3d(-40%, 0, 0);
+    transform: translate3d(-40%, 0, 0);
+  }
+
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.mainSlideBack {
+  -webkit-animation-name: mainSlideBack;
+  animation-name: mainSlideBack;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  -webkit-animation-duration: 0.5s;
+  animation-duration: 0.5s;
   -webkit-animation-timing-function: ease-in;
 }
 

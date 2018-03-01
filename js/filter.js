@@ -20,8 +20,10 @@ stateModule.changeState("shown");
 
 // Set video iFrame size
 function getVidHeight() {
-  var vidHeight = 0.5625*$('.projVid')[0].getBoundingClientRect().width;
-  $(".projVid").height(vidHeight);
+  if ($('.projVid')[0]) {
+    var vidHeight = 0.5625*$('.projVid')[0].getBoundingClientRect().width;
+    $(".projVid").height(vidHeight);
+  }
 }
 
 getVidHeight()
@@ -109,25 +111,29 @@ function animationHover(trigger, element, animation){
 function sidebarSlideLeft() {
   stateModule.changeState("transition");
   $("#sidebarIconContainer").addClass('sidebarShow');
-  $(".sidebarSlide").removeClass('slideBack');         
+  $(".sidebarSlide").removeClass('slideBack'); 
+  $(".mainSlide").removeClass('mainSlideBack');        
   $(".sidebarSlide").addClass('slideOver');
-  $("#main").width('60%');
+  $(".mainSlide").addClass('mainSlideOver');
+  $("#main").width('70%');
   setTimeout( function() {
       getVidHeight()
       stateModule.changeState("hidden");
-    }, 700);
+    }, 500);
 }
 
 function sidebarSlideRight() {
   stateModule.changeState("transition");
   $("#sidebarIconContainer").removeClass('sidebarShow');
   $(".sidebarSlide").removeClass('slideOver');
+  $(".mainSlide").removeClass('mainSlideBack');
   $(".sidebarSlide").addClass('slideBack');
+  $(".mainSlide").addClass('mainSlideBack');
   $("#main").width('50%');
   setTimeout( function() {
       getVidHeight()
       stateModule.changeState("shown");
-    }, 700);
+    }, 500);
 }
 
 function hoverIcon() {
@@ -142,7 +148,7 @@ function hoverIcon() {
       // $("#sidebarIconContainer").removeClass('sidebarShow');
       setTimeout( function() {
         stateModule.changeState("shown");
-      }, 700);
+      }, 500);
     }
   });
 
@@ -154,6 +160,6 @@ function hoverIcon() {
       sidebarSlideLeft();
       setTimeout( function() {
         stateModule.changeState("hidden");
-      }, 700)};
+      }, 500)};
     }
   )}
