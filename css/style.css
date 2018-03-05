@@ -75,7 +75,7 @@
   float: left;
 }
 
-ul {
+#sidebar ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
@@ -206,9 +206,14 @@ ul {
   animation-name: slideOver;
   -webkit-animation-fill-mode: both;
   animation-fill-mode: both;
-  -webkit-animation-duration: 0.5s;
-  animation-duration: 0.5s;
+  -webkit-animation-duration: 0.3s;
+  animation-duration: 0.3s;
+  animation-timing-function: ease-in;
   -webkit-animation-timing-function: ease-in;
+}
+
+.slideFade {
+    opacity: 0.5 !important;
 }
 
 @keyframes mainSlideOver {
@@ -218,8 +223,8 @@ ul {
   }
 
   to {
-    -webkit-transform: translate3d(-40%, 0, 0);
-    transform: translate3d(-40%, 0, 0);
+    -webkit-transform: translate3d(-35.2%, 0, 0);
+    transform: translate3d(-35.2%, 0, 0);
   }
 }
 
@@ -228,8 +233,9 @@ ul {
   animation-name: mainSlideOver;
   -webkit-animation-fill-mode: both;
   animation-fill-mode: both;
-  -webkit-animation-duration: 0.5s;
-  animation-duration: 0.5s;
+  -webkit-animation-duration: 0.3s;
+  animation-duration: 0.3s;
+  animation-timing-function: ease-in;
   -webkit-animation-timing-function: ease-in;
 }
 
@@ -250,15 +256,16 @@ ul {
   animation-name: slideBack;
   -webkit-animation-fill-mode: both;
   animation-fill-mode: both;
-  -webkit-animation-duration: 0.5s;
-  animation-duration: 0.5s;
+  -webkit-animation-duration: 0.3s;
+  animation-duration: 0.3s;
+  animation-timing-function: ease-in;
   -webkit-animation-timing-function: ease-in;
 }
 
 @keyframes mainSlideBack {
   from {
-    -webkit-transform: translate3d(-40%, 0, 0);
-    transform: translate3d(-40%, 0, 0);
+    -webkit-transform: translate3d(-35.2%, 0, 0);
+    transform: translate3d(-35.2%, 0, 0);
   }
 
   to {
@@ -272,8 +279,9 @@ ul {
   animation-name: mainSlideBack;
   -webkit-animation-fill-mode: both;
   animation-fill-mode: both;
-  -webkit-animation-duration: 0.5s;
-  animation-duration: 0.5s;
+  -webkit-animation-duration: 0.3s;
+  animation-duration: 0.3s;
+  animation-timing-function: ease-in;
   -webkit-animation-timing-function: ease-in;
 }
 

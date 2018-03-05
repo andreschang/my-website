@@ -37,6 +37,7 @@ var iconY = $('#sidebar')[0].getBoundingClientRect().height/3,
 
 // Make filter SVGs
 var filters = $("#filter").find("li"),
+projects = $("#projectList").find("li"),
 colors = ['', 'blue', 'red', 'yellow', 'green']
 
 for (i = 1; i < (filters.length); i++) {
@@ -114,12 +115,13 @@ function sidebarSlideLeft() {
   $(".sidebarSlide").removeClass('slideBack'); 
   $(".mainSlide").removeClass('mainSlideBack');        
   $(".sidebarSlide").addClass('slideOver');
+  // $("#header").addClass('slideFade');
   $(".mainSlide").addClass('mainSlideOver');
   $("#main").width('70%');
   setTimeout( function() {
       getVidHeight()
       stateModule.changeState("hidden");
-    }, 500);
+    }, 300);
 }
 
 function sidebarSlideRight() {
@@ -133,7 +135,7 @@ function sidebarSlideRight() {
   setTimeout( function() {
       getVidHeight()
       stateModule.changeState("shown");
-    }, 500);
+    }, 300);
 }
 
 function hoverIcon() {
@@ -148,7 +150,7 @@ function hoverIcon() {
       // $("#sidebarIconContainer").removeClass('sidebarShow');
       setTimeout( function() {
         stateModule.changeState("shown");
-      }, 500);
+      }, 300);
     }
   });
 
@@ -160,6 +162,6 @@ function hoverIcon() {
       sidebarSlideLeft();
       setTimeout( function() {
         stateModule.changeState("hidden");
-      }, 500)};
+      }, 300)};
     }
   )}
