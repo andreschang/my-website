@@ -18,8 +18,8 @@
 <body>
   <div class="container">
     <div id = 'fixed'>
-      <div id = 'header' class = 'sidebarSlide'>
-        <a href='/'>ANDRES CHANG</a>
+      <div id = 'header'>
+        <a id = 'siteName' href='/'>ANDRES CHANG</a>
       </div>
       <div class = 'sidebarSlide sidebarMouseOut'>
         <div id = 'sidebar'>
@@ -27,17 +27,17 @@
             <div id = 'about'>
               <a href = '/about' style='text-decoration: none; color: #000000; font-weight:bold'>About</a>
             </div>
-            <div id = 'projectList'>
+             <div id = 'projectList'>
               <ul>
                 <li><a href = '/' style = 'font-weight:bold'>Projects</a></li>
-                <li><a href = '/business-as-usual' class = 'pTitle climate data drawing'>Business as Usual: 1967-2067</a></li>
-                <li><a href = '/arctic-timeline' class = 'pTitle climate'>An Arctic Timeline</a></li>
-                <li><a href = '/the-eternal-ocean' class = 'pTitle climate construction'>the eternal ocean</a></li>
-                <li><a href = '/the-eternal-ocean-portal' class = 'pTitle climate construction'>the eternal ocean (portal)</a></li>
-                <li><a href = '/chaos-17-01' class = 'pTitle climate data drawing construction'>chaos.17.01</a></li>
-                <li><a href = '/arctic-sea-ice' class = 'pTitle climate data'><i>Investigating patterns of Arctic sea ice loss</i></a></li>
-                <li><a href = '/mythologies' class = 'pTitle climate drawing'>Mythologies</a></li>
-                <li><a href = '/hustle' class = 'pTitle construction'>Hustle!</a></li>
+                <li id="businessAsUsual"><a href = '/business-as-usual' class = 'pTitle climate data drawing'>Business as Usual: 1967-2067</a></li>
+                <li id="arcticTimeline"><a href = '/arctic-timeline' class = 'pTitle climate'>An Arctic Timeline</a></li>
+                <li id="eternalOcean"><a href = '/the-eternal-ocean' class = 'pTitle climate construction'>the eternal ocean</a></li>
+                <li id="eternalOceanPortal"><a href = '/the-eternal-ocean-portal' class = 'pTitle climate construction'>the eternal ocean (portal)</a></li>
+                <li id="chaos1701"><a href = '/chaos-17-01' class = 'pTitle climate data drawing construction'>chaos.17.01</a></li>
+                <li id="arcticSeaIce"><a href = '/arctic-sea-ice' class = 'pTitle climate data'><i>Investigating patterns of Arctic sea ice loss</i></a></li>
+                <li id="mythologies"><a href = '/mythologies' class = 'pTitle climate drawing'>Mythologies</a></li>
+                <li id="hustle"><a href = '/hustle' class = 'pTitle construction'>Hustle!</a></li>
               </ul>
             </div>
           </div>
@@ -85,6 +85,7 @@
   <script type="application/javascript" src="../js/arctic_graph.js"></script>
   <script type="application/javascript">
     window.onload = function(){
+    $("#arcticSeaIce").click(); // click the element
     $("#climate").click(); // click the element
     $("#data").click(); // click the element
     $(document).ready(hoverIcon)

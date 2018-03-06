@@ -4,7 +4,6 @@
   height: 100%;
   font-family: 'Arimo', sans-serif;
   font-size: 1em;
-  padding-left: 50px; 
 }
 
 #fixed {
@@ -30,11 +29,19 @@
 #header a {
   text-decoration: none;
   color:inherit;
+  padding-left: 3px;
+  display: block;
+  transform-origin: 0% 100%;
+  -webkit-transition: all 0.2s ease;
+  -moz-transition: all 0.2s ease;
+  -o-transition: all 0.2s ease;
+  transition: all 0.2s ease;
 }
 
 #sidebar {
   float: left;
   width: 35%;
+  font-size: 0.9em;
 }
 
 #menu {
@@ -48,7 +55,7 @@
 #filter {
   width: 100%;
   padding-bottom: 10px;
-  /*overflow: hidden;*/
+  overflow-x: hidden;
   /*background: #777777;*/
 }
 
@@ -63,11 +70,11 @@
   position: relative;
   top:50px;
   left:40%;
-  overflow-y:scroll;
-  -webkit-transition: all 0.4s ease;
-  -moz-transition: all 0.4s ease;
-  -o-transition: all 0.4s ease;
-  transition: all 0.4s ease;
+  overflow-y:auto;
+  -webkit-transition: all 0.2s ease;
+  -moz-transition: all 0.2s ease;
+  -o-transition: all 0.2s ease;
+  transition: all 0.2s ease;
   /*background: #e8e8e8;*/
 }
 
@@ -85,13 +92,23 @@
 #projectList li a {
   display: block;
   width: 100%;
-  padding: 12px 0px;
+  padding: 12px 3px 12px 3px;
   color: #000000;
   text-decoration: none;
   -webkit-transition: all 0.2s ease;
     -moz-transition: all 0.2s ease;
     -o-transition: all 0.2s ease;
     transition: all 0.2s ease;
+}
+
+#projectList svg {
+    position: absolute;
+    z-index: -1;
+    -webkit-transition: all 0.2s ease;
+    -moz-transition: all 0.2s ease;
+    -o-transition: all 0.2s ease;
+    transition: all 0.2s ease;
+    overflow-x: hidden;
 }
 
 #filter li {
@@ -109,6 +126,11 @@
         -ms-user-select: none; /* Internet Explorer/Edge */
             user-select: none; /* Non-prefixed version, currently
                                   supported by Chrome and Opera */
+}
+
+#about a {
+  padding-left: 3px;
+
 }
 
 #filter div {
@@ -163,6 +185,11 @@
   transition: all 0.2s ease;
 }
 
+
+#projectList .fOver {
+  opacity: .25 !important;
+}
+
 .fSelect svg {
   opacity: .5 !important;
 }
@@ -178,15 +205,19 @@
 #sidebarIconContainer {
   float: left;
   width: 3.5%;
-  -webkit-transition: all 0.4s ease;
-  -moz-transition: all 0.4s ease;
-  -o-transition: all 0.4s ease;
-  transition: all 0.4s ease;
+  -webkit-transition: all 0.2s ease;
+  -moz-transition: all 0.2s ease;
+  -o-transition: all 0.2s ease;
+  transition: all 0.2s ease;
   opacity: 0;
 }
 
 .sidebarShow {
   opacity: .5 !important;
+}
+
+.sidebarIcon {
+  pointer-events: fill !important;
 }
 
 @keyframes slideOver {
@@ -196,8 +227,8 @@
   }
 
   to {
-    -webkit-transform: translate3d(-35.2%, 0, 0);
-    transform: translate3d(-35.2%, 0, 0);
+    -webkit-transform: translate3d(-37%, 0, 0);
+    transform: translate3d(-37%, 0, 0);
   }
 }
 
@@ -212,8 +243,16 @@
   -webkit-animation-timing-function: ease-in;
 }
 
-.slideFade {
-    opacity: 0.5 !important;
+.slideOver {
+  pointer-events: none;
+}
+
+.slideVertical {
+  opacity: 0.5 !important;
+  -moz-transform: rotate(90deg) translate(-27px);
+  -webkit-transform: rotate(90deg) translate(-27px);
+  -o-transform: rotate(90deg) translate(-27px);
+  transform: rotate(90deg) translate(-27px);
 }
 
 @keyframes mainSlideOver {
@@ -223,8 +262,8 @@
   }
 
   to {
-    -webkit-transform: translate3d(-35.2%, 0, 0);
-    transform: translate3d(-35.2%, 0, 0);
+    -webkit-transform: translate3d(-30.2%, 0, 0);
+    transform: translate3d(-30.2%, 0, 0);
   }
 }
 
@@ -241,8 +280,8 @@
 
 @keyframes slideBack {
   from {
-    -webkit-transform: translate3d(-35.2%, 0, 0);
-    transform: translate3d(-35.2%, 0, 0);
+    -webkit-transform: translate3d(-37%, 0, 0);
+    transform: translate3d(-37%, 0, 0);
   }
 
   to {
@@ -264,8 +303,8 @@
 
 @keyframes mainSlideBack {
   from {
-    -webkit-transform: translate3d(-35.2%, 0, 0);
-    transform: translate3d(-35.2%, 0, 0);
+    -webkit-transform: translate3d(-30.2%, 0, 0);
+    transform: translate3d(-30.2%, 0, 0);
   }
 
   to {
@@ -287,8 +326,16 @@
 
 @media screen and (min-width: 40.5em) { 
 
+  .container {
+    padding-left: 40px; 
+  }
+
+  #main {
+    left: 33%;
+  }
+
   #sidebar {
-    width: 33%;
+    width: 30%;
   }
 
   #menu {
@@ -311,14 +358,27 @@
 */
     @keyframes slideBack {
       from {
-        -webkit-transform: translate3d(-33.2%, 0, 0);
-        transform: translate3d(-33.2%, 0, 0);
+        -webkit-transform: translate3d(-30.4%, 0, 0);
+        transform: translate3d(-30.4%, 0, 0);
     }
 }
     @keyframes slideOver {
         to {
-    -webkit-transform: translate3d(-33.2%, 0, 0);
-    transform: translate3d(-33.2%, 0, 0);
+    -webkit-transform: translate3d(-30.4%, 0, 0);
+    transform: translate3d(-30.4%, 0, 0);
+  }
+}
+
+    @keyframes mainSlideBack {
+      from {
+        -webkit-transform: translate3d(-28%, 0, 0);
+        transform: translate3d(-28%, 0, 0);
+    }
+}
+    @keyframes mainSlideOver {
+        to {
+    -webkit-transform: translate3d(-28%, 0, 0);
+    transform: translate3d(-28%, 0, 0);
   }
 }
 

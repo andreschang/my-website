@@ -29,7 +29,7 @@ function getVidHeight() {
 getVidHeight()
 
 // Draw sidebar icon
-var iconY = $('#sidebar')[0].getBoundingClientRect().height/3,
+var iconY = $('#sidebar')[0].getBoundingClientRect().height/3+20,
   drawing = SVG("sidebarIconContainer").size(50,100).translate(0,iconY),
   sidebarIcon = drawing.polygon('10,25 30,50 10,75').fill('blue').addClass('sidebarIcon');
   // sidebarIcon = drawing.rect(100,100).fill('blue').addClass('sidebarIcon');
@@ -38,7 +38,9 @@ var iconY = $('#sidebar')[0].getBoundingClientRect().height/3,
 // Make filter SVGs
 var filters = $("#filter").find("li"),
 projects = $("#projectList").find("li"),
-colors = ['', 'blue', 'red', 'yellow', 'green']
+projIDs = ['businessAsUsual', 'arcticTimeline', 'eternalOcean', 'eternalOceanPortal', 'chaos1701', 'arcticSeaIce', 
+'mythologies', 'hustle']
+colors = ['', '#0000FF', '#780DFF', 'yellow', 'green']
 
 for (i = 1; i < (filters.length); i++) {
   var elmnt = filters[i],
@@ -50,11 +52,35 @@ for (i = 1; i < (filters.length); i++) {
 
   var draw = SVG(filters[i]).translate(-2,dY).size(300,50).opacity(0),
     rect = draw.rect(width, .4*height).fill(colors[1]).opacity('1');
-    // rect = draw.rect(width, .height).fill(colors[1]).opacity('1');
+};
+
+for (i = 1; i < (projects.length); i++) {
+  var elmnt = projects[i],
+    height = elmnt.getBoundingClientRect().height,
+    // dY = -.8*height,
+    dY = -.83*height,
+    fWidth = $("#projectList")[0].getBoundingClientRect().width,
+    width = fWidth > 300 ? 300 : fWidth;
+
+  var draw = SVG(projects[i]).translate(0,dY).size(300,50).opacity(0).addClass('hover'),
+    rect = draw.rect(width, .65*height).fill(colors[1]).opacity('1');
+};
+
+for (i = 1; i < (projects.length); i++) {
+  var elmnt = projects[i],
+    height = elmnt.getBoundingClientRect().height,
+    // dY = -.8*height,
+    dY = -.83*height,
+    fWidth = $("#projectList")[0].getBoundingClientRect().width,
+    width = fWidth > 300 ? 300 : fWidth;
+
+  var draw = SVG(projects[i]).translate(0,dY).size(300,50).opacity(0).addClass('click'),
+    rect = draw.rect(width, .65*height).fill(colors[1]).opacity('1');
 };
 
 
 // Filter by combination of tags
+// And other mouseover functionality
 var selectedFilters = []
 
 $(document).ready(function(){
@@ -76,6 +102,17 @@ $(document).ready(function(){
       $(".pTitle").not(selectedFilters.join('')).addClass("fSelect", 200);
     }
   });
+
+ $("#projectList").find("li").hover(function(){
+    if ($(this).find("svg.click").hasClass("projSelect") == false) {
+    $(this).find("svg.hover").toggleClass("fOver");
+   }
+  })
+
+  $("#projectList").find("li").click(function(){
+    $(this).find("svg.click").addClass("fSelect projSelect");
+  })
+
 });
 
 // Animation functions
@@ -115,9 +152,11 @@ function sidebarSlideLeft() {
   $(".sidebarSlide").removeClass('slideBack'); 
   $(".mainSlide").removeClass('mainSlideBack');        
   $(".sidebarSlide").addClass('slideOver');
-  // $("#header").addClass('slideFade');
   $(".mainSlide").addClass('mainSlideOver');
-  $("#main").width('70%');
+  $("#main").width('74%');
+  setTimeout( function() {
+    $("#siteName").addClass('slideVertical');
+  }, 200)
   setTimeout( function() {
       getVidHeight()
       stateModule.changeState("hidden");
@@ -126,6 +165,7 @@ function sidebarSlideLeft() {
 
 function sidebarSlideRight() {
   stateModule.changeState("transition");
+  $("#siteName").removeClass('slideVertical');
   $("#sidebarIconContainer").removeClass('sidebarShow');
   $(".sidebarSlide").removeClass('slideOver');
   $(".mainSlide").removeClass('mainSlideBack');
@@ -139,7 +179,7 @@ function sidebarSlideRight() {
 }
 
 function hoverIcon() {
-  $('.sidebarIcon').mouseenter( function(event) {
+  $('.sidebarIcon').mouseover( function(event) {
     var stateOn = stateModule.getState();
     if (stateOn == "hidden") {
       console.log('show menu');
@@ -154,7 +194,7 @@ function hoverIcon() {
     }
   });
 
-  $('#main').mouseenter( function(event) {
+  $('#main').mouseover( function(event) {
     var stateOff = stateModule.getState();
     if (stateOff == "shown") {
       // stateModule.changeState("transition");
