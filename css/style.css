@@ -10,7 +10,6 @@
   width: 100%;
   height: 100%;
   position: fixed;
-  /*background: #e8e8e8;*/
   overflow-y: auto;
 }
 
@@ -23,23 +22,33 @@
   float: left;
   z-index: 999;
   text-decoration: none;
-  /*background: #e8e8e8;*/
+}
+
+#header div {
+  padding-left: 3px;
+  display: block;
+  transform-origin: 0% 100%;
 }
 
 #header a {
   text-decoration: none;
   color:inherit;
-  padding-left: 3px;
-  display: block;
-  transform-origin: 0% 100%;
-  -webkit-transition: all 0.2s ease;
-  -moz-transition: all 0.2s ease;
-  -o-transition: all 0.2s ease;
-  transition: all 0.2s ease;
 }
+
+.sidebarItem {
+  padding: 0px 0px 14px 3px;
+  font-weight: bold;
+}
+
+#mainVid {
+  margin-top: 80px;
+}
+
+/*Project Layout*/
 
 #sidebar {
   float: left;
+  /*padding-top: 30px;*/
   width: 35%;
   font-size: 0.9em;
 }
@@ -56,11 +65,11 @@
   width: 100%;
   padding-bottom: 10px;
   overflow-x: hidden;
-  /*background: #777777;*/
 }
 
 #menuIcon {
   width: 100px;
+  float: left;
 }
 
 #main {
@@ -71,43 +80,27 @@
   top:50px;
   left:40%;
   overflow-y:auto;
-  -webkit-transition: all 0.2s ease;
-  -moz-transition: all 0.2s ease;
-  -o-transition: all 0.2s ease;
-  transition: all 0.2s ease;
-  /*background: #e8e8e8;*/
-}
-
-#menuIcon {
-  float: left;
 }
 
 #sidebar ul {
   list-style-type: none;
+  font-weight: normal;
   margin: 0;
   padding: 0;
-  /*background: #f1f1f1;*/
 }
 
 #projectList li a {
   display: block;
   width: 100%;
-  padding: 12px 3px 12px 3px;
+  padding: 8px 3px 8px 0px;
   color: #000000;
   text-decoration: none;
-  -webkit-transition: all 0.2s ease;
-    -moz-transition: all 0.2s ease;
-    -o-transition: all 0.2s ease;
-    transition: all 0.2s ease;
+  cursor: pointer;
 }
 
 #projectList svg {
     position: absolute;
     z-index: -1;
-    -webkit-transition: all 0.2s ease;
-    -moz-transition: all 0.2s ease;
-    -o-transition: all 0.2s ease;
-    transition: all 0.2s ease;
     overflow-x: hidden;
 }
 
@@ -119,35 +112,21 @@
   color: black;
   text-decoration: none;
   z-index: 100;
-  -webkit-touch-callout: none; /* iOS Safari */
-    -webkit-user-select: none; /* Safari */
-     -khtml-user-select: none; /* Konqueror HTML */
-       -moz-user-select: none; /* Firefox */
-        -ms-user-select: none; /* Internet Explorer/Edge */
-            user-select: none; /* Non-prefixed version, currently
-                                  supported by Chrome and Opera */
-}
-
-#about a {
-  padding-left: 3px;
-
+  cursor: pointer;
+  -webkit-touch-callout: none;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
 }
 
 #filter div {
   opacity: .5;
-  -webkit-transition: all 0.2s ease;
-    -moz-transition: all 0.2s ease;
-    -o-transition: all 0.2s ease;
-    transition: all 0.2s ease;
 }
 
 #filter svg {
     position: absolute;
     z-index: -1;
-    -webkit-transition: all 0.2s ease;
-    -moz-transition: all 0.2s ease;
-    -o-transition: all 0.2s ease;
-    transition: all 0.2s ease;
     overflow: hidden;
 }
 
@@ -179,15 +158,19 @@
 .projVid {
   margin-top: 50px;
   width: 100%;
-  -webkit-transition: all 0.2s ease;
-  -moz-transition: all 0.2s ease;
-  -o-transition: all 0.2s ease;
-  transition: all 0.2s ease;
 }
 
 
 #projectList .fOver {
   opacity: .25 !important;
+}
+
+#filter .fOver {
+  opacity: .25 !important;
+}
+
+.fOver svg {
+  opacity: .5;
 }
 
 .fSelect svg {
@@ -205,10 +188,6 @@
 #sidebarIconContainer {
   float: left;
   width: 3.5%;
-  -webkit-transition: all 0.2s ease;
-  -moz-transition: all 0.2s ease;
-  -o-transition: all 0.2s ease;
-  transition: all 0.2s ease;
   opacity: 0;
 }
 
@@ -220,109 +199,6 @@
   pointer-events: fill !important;
 }
 
-@keyframes slideOver {
-  from {
-    -webkit-transform: translate3d(0, 0, 0);
-    transform: translate3d(0, 0, 0);
-  }
-
-  to {
-    -webkit-transform: translate3d(-37%, 0, 0);
-    transform: translate3d(-37%, 0, 0);
-  }
-}
-
-.slideOver {
-  -webkit-animation-name: slideOver;
-  animation-name: slideOver;
-  -webkit-animation-fill-mode: both;
-  animation-fill-mode: both;
-  -webkit-animation-duration: 0.3s;
-  animation-duration: 0.3s;
-  animation-timing-function: ease-in;
-  -webkit-animation-timing-function: ease-in;
-}
-
-.slideOver {
-  pointer-events: none;
-}
-
-.slideVertical {
-  opacity: 0.5 !important;
-  -moz-transform: rotate(90deg) translate(-27px);
-  -webkit-transform: rotate(90deg) translate(-27px);
-  -o-transform: rotate(90deg) translate(-27px);
-  transform: rotate(90deg) translate(-27px);
-}
-
-@keyframes mainSlideOver {
-  from {
-    -webkit-transform: translate3d(0, 0, 0);
-    transform: translate3d(0, 0, 0);
-  }
-
-  to {
-    -webkit-transform: translate3d(-30.2%, 0, 0);
-    transform: translate3d(-30.2%, 0, 0);
-  }
-}
-
-.mainSlideOver {
-  -webkit-animation-name: mainSlideOver;
-  animation-name: mainSlideOver;
-  -webkit-animation-fill-mode: both;
-  animation-fill-mode: both;
-  -webkit-animation-duration: 0.3s;
-  animation-duration: 0.3s;
-  animation-timing-function: ease-in;
-  -webkit-animation-timing-function: ease-in;
-}
-
-@keyframes slideBack {
-  from {
-    -webkit-transform: translate3d(-37%, 0, 0);
-    transform: translate3d(-37%, 0, 0);
-  }
-
-  to {
-    -webkit-transform: translate3d(0, 0, 0);
-    transform: translate3d(0, 0, 0);
-  }
-}
-
-.slideBack {
-  -webkit-animation-name: slideBack;
-  animation-name: slideBack;
-  -webkit-animation-fill-mode: both;
-  animation-fill-mode: both;
-  -webkit-animation-duration: 0.3s;
-  animation-duration: 0.3s;
-  animation-timing-function: ease-in;
-  -webkit-animation-timing-function: ease-in;
-}
-
-@keyframes mainSlideBack {
-  from {
-    -webkit-transform: translate3d(-30.2%, 0, 0);
-    transform: translate3d(-30.2%, 0, 0);
-  }
-
-  to {
-    -webkit-transform: translate3d(0, 0, 0);
-    transform: translate3d(0, 0, 0);
-  }
-}
-
-.mainSlideBack {
-  -webkit-animation-name: mainSlideBack;
-  animation-name: mainSlideBack;
-  -webkit-animation-fill-mode: both;
-  animation-fill-mode: both;
-  -webkit-animation-duration: 0.3s;
-  animation-duration: 0.3s;
-  animation-timing-function: ease-in;
-  -webkit-animation-timing-function: ease-in;
-}
 
 @media screen and (min-width: 40.5em) { 
 
@@ -352,36 +228,8 @@
     /*margin-right: 16px;*/
   }
 
-/*  #sidebarIconContainer {
-    width: 3.6%;
+  #mainVid {
+    margin-top: 0px;
   }
-*/
-    @keyframes slideBack {
-      from {
-        -webkit-transform: translate3d(-30.4%, 0, 0);
-        transform: translate3d(-30.4%, 0, 0);
-    }
-}
-    @keyframes slideOver {
-        to {
-    -webkit-transform: translate3d(-30.4%, 0, 0);
-    transform: translate3d(-30.4%, 0, 0);
-  }
-}
-
-    @keyframes mainSlideBack {
-      from {
-        -webkit-transform: translate3d(-28%, 0, 0);
-        transform: translate3d(-28%, 0, 0);
-    }
-}
-    @keyframes mainSlideOver {
-        to {
-    -webkit-transform: translate3d(-28%, 0, 0);
-    transform: translate3d(-28%, 0, 0);
-  }
-}
-
-
 
 }

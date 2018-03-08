@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta content="utf-8" http-equiv="encoding">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Andres Chang | chaos.17.01</title>
+  <link rel="stylesheet" type="text/css" href="../css/style.css"/>
+  <link rel="stylesheet" type="text/css" href="../css/animate.css"/>
+  <link rel="stylesheet" type="text/css" href="../css/lightbox.css"/>
+  <link href="https://fonts.googleapis.com/css?family=Arimo:r,b,i" rel="stylesheet">
+</head>
+<body>
+  <div class="container">
+    <div id = 'fixed'>
+      <div id = 'header'>
+        <a id = 'siteName' href='/'>ANDRES CHANG</a>
+      </div>
+      <div class = 'sidebarSlide sidebarMouseOut'>
+        <div id = 'sidebar'>
+          <div id = 'menu'>
+            <div id = 'news' class = 'sidebarItem'>
+              <a href = '/news' style='text-decoration: none; color: #000000;'>News</a>
+            </div>
+            <div id = 'projectList' class = 'sidebarItem'>
+              <ul>
+                <li style = 'font-weight: bold; padding-bottom: 6px;'>Projects</li>
+                <li style = 'padding-bottom: 6px;  cursor: pointer; '><i id = 'plusFilter'>- Filter</i></li>
+                <li id="businessAsUsual"><a href = '/business-as-usual' class = 'pTitle climate data drawing'>Business as Usual: 1967-2067</a></li>
+                <li id="arcticTimeline"><a href = '/arctic-timeline' class = 'pTitle climate'>An Arctic Timeline</a></li>
+                <li id="eternalOcean"><a href = '/the-eternal-ocean' class = 'pTitle climate construction'>the eternal ocean</a></li>
+                <li id="eternalOceanPortal"><a href = '/the-eternal-ocean-portal' class = 'pTitle climate construction'>the eternal ocean (portal)</a></li>
+                <li id="chaos1701"><a href = '/chaos-17-01' class = 'pTitle climate data drawing construction'>chaos.17.01</a></li>
+                <li id="arcticSeaIce"><a href = '/arctic-sea-ice' class = 'pTitle climate data'>Investigating patterns of Arctic sea ice loss</a></li>
+                <li id="mythologies"><a href = '/mythologies' class = 'pTitle climate drawing'>Mythologies</a></li>
+                <li id="hustle"><a href = '/hustle' class = 'pTitle construction'>Hustle!</a></li>
+              </ul>
+            </div>
+            <div id = 'about' class = 'sidebarItem'>
+              <a href = '/about' style='text-decoration: none; color: #000000;'>About</a>
+            </div>
+          </div>
+          <div id = 'filter'>
+            <ul>
+              <li style = 'color:#000000; padding-top:12px; cursor: default;'>Filter by:</li>
+              <li id = 'climate'><div>Climate</div></li>
+              <li id = 'construction'><div>Construction</div></li>
+              <li id = 'drawing'><div>Drawing</div></li>
+              <li id = 'data'><div>Data</div></li>
+            </ul>
+          </div>
+        </div>
+        <div id = 'sidebarIconContainer' style = 'opacity: 0;'></div>
+      </div>
+    </div>
+    <div id = 'main' class = 'mainSlide'>
+      <div class = 'proj'>
+        <h1>chaos.17.01</h1>
+        <h2>Silkscreen on glass, steel, laser-etched walnut, pine, LED light. 2017.</h2>
+
+        <p>chaos.17.01 is a contour map of surface temperature across the biblical conception of chaos. The climate of chaos was precisely determined by means of a general circulation model (GCM), where the surface of the planet has been made randomly reflective/absorptive, run for nine years on a supercomputer at Brown CCV. A "slice" of the climate of chaos is extracted from output data, printed on glass, and presented atop a light table.</p>
+
+        <a href='images/chaos.17.01_01.jpg' data-lightbox='chaos-17-01'><img src='images/chaos.17.01_01.jpg''/></a>
+        <a href='images/chaos.17.01_02.jpg' data-lightbox='chaos-17-01'><img src='images/chaos.17.01_02.jpg''/></a>
+        <a href='images/chaos.17.01_02.jpg' data-lightbox='chaos-17-01'><img src='images/chaos.17.01_03.jpg''/></a>
+
+      </div>
+    </div>
+  </div>
+  <script type="application/javascript" src="../js/svg.js"></script>
+  <script type="application/javascript" src="../js/lightbox-plus-jquery.js"></script>
+  <script type="application/javascript" src="../js/filter.js"></script>
+  <script type="application/javascript">
+
+    setProjectPage("#chaos1701",["#climate", "#construction", "#drawing", "#data"])
+
+  </script>
+</body>
+</html>
