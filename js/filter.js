@@ -10,6 +10,7 @@ setupInteraction()
 function setProjectPage(pName, pFilters) {
     window.onload = function(){
       $(pName).find('a').click();
+      $(pName).find('a').css({'font-style':'italic'});
       $( "#main").find(".proj").removeClass('fSlideLeft')
       $( "#main").find(".proj").addClass('fSlideRight')
       hoverIcon()
@@ -185,19 +186,34 @@ function hoverIcon() {
         stateModule.changeState("hidden");
       }, 300)};
     });
+
+  $('#sidebar').on("swipeleft", function(event) {
+    var stateOff = stateModule.getState();
+    if (stateOff == "shown") {
+      // stateModule.changeState("transition");
+      // $(".sidebarSlide").removeClass('slideBack');
+      sidebarSlideLeft();
+      setTimeout( function() {
+        stateModule.changeState("hidden");
+      }, 300)};
+  });
+
+  $('#container').on("swiperight", function(event) {
+    var stateOn = stateModule.getState();
+    if (stateOn == "hidden") {
+      console.log('show menu');
+      sidebarSlideRight();
+      // stateModule.changeState("transition");
+      // $(".sidebarSlide").addClass('slideBack');
+      // $(".sidebarSlide").removeClass('slideOver');
+      // $("#sidebarIconContainer").removeClass('sidebarShow');
+      setTimeout( function() {
+        stateModule.changeState("shown");
+      }, 300);
+    }
+  });
+
 }
-
-// function arrowKeys() {
-
-//   var arrowY = 50+($("#main")[0].getBoundingClientRect().height)*.95;
-//   $("#container").append("<div id = 'lArrow'>Last project</div>")
-//   $("#lArrow").css({
-//     "position":"absolute", 
-//     "left": "5%", 
-//     "top": arrowY,
-//   })
-
-// }
 
 // State module
 
