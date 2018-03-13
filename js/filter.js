@@ -187,7 +187,9 @@ function hoverIcon() {
       }, 300)};
     });
 
-  $('#sidebar').on("swipeleft", function(event) {
+  var mainSwipe = new Hammer(container);
+
+  mainSwipe.on("swipeleft", function(event) {
     var stateOff = stateModule.getState();
     if (stateOff == "shown") {
       // stateModule.changeState("transition");
@@ -196,9 +198,9 @@ function hoverIcon() {
       setTimeout( function() {
         stateModule.changeState("hidden");
       }, 300)};
-  });
+    });
 
-  $('#container').on("swiperight", function(event) {
+  mainSwipe.on("swiperight", function(event) {
     var stateOn = stateModule.getState();
     if (stateOn == "hidden") {
       console.log('show menu');
@@ -212,7 +214,6 @@ function hoverIcon() {
       }, 300);
     }
   });
-
 }
 
 // State module
