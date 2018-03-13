@@ -101,13 +101,15 @@
 #projectList li {
   display: inline-block;
   width: 100%;
+  padding: 6px 3px 6px 0px;
 }
 
 #projectList li a {
   display: inline-block;
   width: 100%;
-  padding: 8px 3px 8px 0px;
   color: #000000;
+  padding: 2px;
+  background: rgba(0,0,0,0);
   text-decoration: none;
   cursor: pointer;
 }
@@ -121,7 +123,7 @@
 #filter li {
   display: inline-block;
   width: 100%;
-  padding: 7px 0px;
+  padding: 5px 0px;
   /*color: #888888;*/
   color: black;
   text-decoration: none;
@@ -135,6 +137,7 @@
 }
 
 #filter div {
+  padding: 2px;
   opacity: .5;
 }
 
@@ -199,29 +202,34 @@
 }
 
 #projectList .fOver {
-  opacity: .25 !important;
-}
+  background: rgba(0,0,255,0.4);
+  }
 
 #filter .fOver {
-  opacity: .25 !important;
-}
-
-
-.fSelect svg {
-  opacity: .5 !important;
+  background: rgba(0,0,255,0.4);
 }
 
 #projectList .fSelect {
-  opacity: .5 !important;
+  opacity: .5;
+}
+
+#projectList .projSelect {
+  opacity: 1 !important;
+  background: rgba(0,0,255,0.6);
 }
 
 #filter .fSelect div {
   opacity: 1 !important;
+  background: rgba(0,0,255,0.6);
 }
 
 #sidebarIconContainer {
-  float: left;
+  position: relative;
+  display: inline-block;
+  top:0;
+  left: 0;
   width: 3.5%;
+  height: 100px;
   opacity: 0;
 }
 
@@ -254,6 +262,11 @@
   margin-top: 25px;
 }
 
+/*.pBox {
+  background: blue;
+  padding: 2px;
+  opacity: 0;
+}*/
 
 @media screen and (min-width: 40.5em) { 
 
