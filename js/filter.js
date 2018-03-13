@@ -15,9 +15,30 @@ function setProjectPage(pName, pFilters) {
       $( "#main").find(".proj").addClass('fSlideRight')
       hoverIcon()
       filterSlideRight()
+      var selectedFilters = []
       for (i=0; i < (pFilters.length); i++) {
         $(pFilters[i]).find("div").addClass('fOver');
-        $(pFilters[i]).find("div").click();
+        // $(pFilters[i]).find("div").click();
+        $(pFilters[i]).find("div").addClass("fSelect");
+        console.log($(pFilters[i]).find("div"))
+        $(pFilters[i]).addClass("fSelect");
+
+        var prjId = '.'+$(pFilters[i]).attr("id");
+        console.log(prjId)
+        if (selectedFilters.includes(prjId)) {
+          var index = selectedFilters.indexOf(prjId);
+          if (index > -1) {
+            selectedFilters.splice(index, 1);
+            console.log('restore '+selectedFilters.join(''))
+            $(".pTitle"+selectedFilters.join('')).removeClass("fSelect", 200);
+            $(pFilters[i]).find("div").toggleClass("fOver");
+              }
+        } else {
+          selectedFilters.push(prjId)
+          console.log('keep '+(selectedFilters.join('')))
+          $(".pTitle").not(selectedFilters.join('')).addClass("fSelect", 200);
+          $(pFilters[i]).find("div").toggleClass("fOver");
+        }
       }
   }
 }
@@ -159,6 +180,28 @@ function filterSlideRight() {
   $(".fixedWidth").addClass('ffwSlideRight');
   $("#main").not($(".mainVid")).width('50%');
 }
+
+function filterProjects(id) {
+      $(this).find("div").toggleClass("fSelect");
+      $(this).toggleClass("fSelect");
+
+      var prjId = '.'+$(this).attr("id");
+      if (selectedFilters.includes(prjId)) {
+        var index = selectedFilters.indexOf(prjId);
+        if (index > -1) {
+          selectedFilters.splice(index, 1);
+          console.log('restore '+selectedFilters.join(''))
+          $(".pTitle"+selectedFilters.join('')).removeClass("fSelect", 200);
+          $(this).find("div").toggleClass("fOver");
+            }
+      } else {
+        selectedFilters.push(prjId)
+        console.log('keep '+(selectedFilters.join('')))
+        $(".pTitle").not(selectedFilters.join('')).addClass("fSelect", 200);
+        $(this).find("div").toggleClass("fOver");
+      }
+    }
+
 
 function hoverIcon() {
   $('.sidebarIcon').mouseover( function(event) {
