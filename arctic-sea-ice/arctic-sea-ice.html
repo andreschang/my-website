@@ -1,0 +1,38 @@
+<head>
+  <link rel="stylesheet" href="https://cdn.pydata.org/bokeh/release/bokeh-0.12.7.min.css" type="text/css" />
+    <style>
+    .bullet li {
+      padding-bottom: 1.2em;
+    }
+
+    .bk-root {
+      margin: 40px 0px;
+    }
+  
+  </style>
+</head>
+
+<body>
+
+  <h1>Investigating patterns of Arctic sea ice loss</h1>
+
+        <p style = "padding-top: 25px;">Until recently, scientists were hesitant to predict the emergence of a seasonally ice-free Arctic, but now many of them believe that this could occur by the middle of the 21st century. My research with <a href="https://vivo.brown.edu/display/al20">Amanda Lynch</a> and <a href = "http://faculty.babson.edu/goldstein/">Michael A. Goldstein</a> aims to decipher patterns of rapid sea ice loss &ndash; a critical, but poorly understood aspect of the long-term evolution of the Arctic.</p>
+
+        <p>Our first discovery was that the recent decline of Arctic sea ice is better described by a series of shifts in the mean than a linear trend. This is true for both <a href = "https://climatedataguide.ucar.edu/climate-data/sea-ice-concentration-data-hadisst">satellite data</a> from 1953-2015 (shown below) and modeled data from a <a href="http://www.cesm.ucar.edu/projects/community-projects/LENS/">'business as usual' climate simulation</a> from 1960-2040. Within the context of our research, this finding suggests that some years with abnormally rapid ice loss are not just outliers, but also breakpoints in the long-term evolution of Arctic sea ice.</p>
+
+        <div class="bk-root">
+            <div class="bk-plotdiv" id="arcticGraph"></div>
+        </div>
+
+        <p>
+          Next, we narrowed in on those specific breakpoint years to determine why they occur and what exactly they represent. We divided the Arctic into four overlapping regions (Pacific, Arctic, Russian, and Canadian) for this analysis to capture the spatial variation in sea ice behavior. A few key points we determined are:
+        </p>
+        <ul class = 'bullet'>
+          <li>Pacific ice area breakpoints are caused by a combination of ice divergence, which thins ice making it susceptible to early melting, and warm spring temperatures.</li>
+          <li>Atlantic breakpoints are less clearly explained by surface energy and ice dynamics, potentially due to the stronger influence of ocean heat transport.</li>
+          <li>Pacific ice volume continues to decline substantially the year after a breakpoint, whereas Atlantic ice recovers slowly after a breakpoint. Pacific BPs, then, play a more important role in long-term ice loss.</li>
+        </ul>
+
+</body>
+
+<script type="application/javascript" src="../js/arctic_graph.js"></script>

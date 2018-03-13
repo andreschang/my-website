@@ -1,5 +1,5 @@
 
-.container {
+#container {
   width: 100%;
   height: 100%;
   font-family: 'Arimo', sans-serif;
@@ -11,28 +11,34 @@
   height: 100%;
   position: fixed;
   overflow-y: auto;
+  z-index: 999;
+  pointer-events: none;
 }
 
 #header {
   width: 100%;
   height: 50px;
-  font-size: 1.4em;
+  font-size: 1.3em;
   word-spacing: 0.25em;
   padding: 20px 0px 0px 0px;
+  position: relative;
   float: left;
   z-index: 999;
   text-decoration: none;
 }
 
-#header div {
+#siteName {
   padding-left: 3px;
   display: block;
   transform-origin: 0% 100%;
+  position: relative;
+  z-index: 999;
 }
 
 #header a {
   text-decoration: none;
   color:inherit;
+  pointer-events: all;
 }
 
 .sidebarItem {
@@ -50,7 +56,8 @@
   float: left;
   /*padding-top: 30px;*/
   width: 35%;
-  font-size: 0.9em;
+  font-size: 0.85em;
+  pointer-events: all;
 }
 
 #menu {
@@ -74,12 +81,14 @@
 
 #main {
   width: 50%;
-  padding: 10px 10px 160px 10px;
+  padding: 10px 10px 80px 20px;
   float: left;
   position: relative;
   top:50px;
   left:40%;
-  overflow-y:auto;
+  /*overflow-y:auto;*/
+  z-index: 99;
+  overflow: visible;
 }
 
 #sidebar ul {
@@ -89,8 +98,13 @@
   padding: 0;
 }
 
+#projectList li {
+  display: inline-block;
+  width: 100%;
+}
+
 #projectList li a {
-  display: block;
+  display: inline-block;
   width: 100%;
   padding: 8px 3px 8px 0px;
   color: #000000;
@@ -105,7 +119,7 @@
 }
 
 #filter li {
-  display: block;
+  display: inline-block;
   width: 100%;
   padding: 7px 0px;
   /*color: #888888;*/
@@ -132,8 +146,10 @@
 
 .proj h1 {
   font-size: 2em;
-  font-weight: bold;
-  line-height: 1em;
+  /*font-weight: bold;*/
+  line-height: 1.05em;
+  font-family: 'Roboto Mono', sans-serif;
+  letter-spacing: -0.02em;
 }
 
 .proj h2 {
@@ -145,14 +161,30 @@
   padding-bottom: 1.3em;
 }
 
-.proj p {
-  font-size: 1em;
-  line-height: 1.2em;
+.proj p, .proj li, .fixedWidth p {
+  /*font-size: 1em;*/
+  line-height: 1.15em;
+  font-family: 'Crimson Text', serif;
+  font-size: 1.1em;
+}
+
+.proj.archive h1 {
+  font-size: 1.7em;
+  /*font-weight: bold;*/
+  line-height: 1.05em;
+  font-family: 'Roboto Mono', sans-serif;
+  letter-spacing: -0.02em;
+}
+
+.proj.archive h2 {
+  line-height: 0.8em;
 }
 
 .proj img {
-  margin-top: 50px;
+  margin-top: 65px;
   width: 100%;
+  box-shadow: 10px 10px 40px grey;
+  position: relative;
 }
 
 .projVid {
@@ -160,6 +192,11 @@
   width: 100%;
 }
 
+.about {
+  font-size: 1em;
+  line-height: 1.2em;
+  margin-top: 15px;
+}
 
 #projectList .fOver {
   opacity: .25 !important;
@@ -169,9 +206,6 @@
   opacity: .25 !important;
 }
 
-.fOver svg {
-  opacity: .5;
-}
 
 .fSelect svg {
   opacity: .5 !important;
@@ -199,15 +233,37 @@
   pointer-events: fill !important;
 }
 
+.about img {
+    position: inline;
+    padding: 0px 15px 15px 0px;
+}
+
+#main.mainSlideOver {
+  left: 11.5%;
+}
+
+#main.mainSlideBack {
+  left: 40%;
+}
+
+.arcPost {
+  padding-bottom: 60px;
+}
+
+.arcPost img {
+  margin-top: 25px;
+}
+
 
 @media screen and (min-width: 40.5em) { 
 
-  .container {
+  #container {
     padding-left: 40px; 
   }
 
   #main {
     left: 33%;
+    padding-left: 10px;
   }
 
   #sidebar {
@@ -228,8 +284,26 @@
     /*margin-right: 16px;*/
   }
 
+  #main.mainSlideBack {
+  left: 33%;
+  }
+
   #mainVid {
     margin-top: 0px;
+  }
+
+  #main.fixedWidth {
+    left: 23%;
+    width: 58% !important;
+  }
+
+  .about {
+    margin-top: 80px;
+  }
+
+  .about img {
+    float: right; 
+    padding-left: 15px;
   }
 
 }

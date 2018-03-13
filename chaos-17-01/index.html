@@ -3,41 +3,40 @@
 <head>
   <meta content="utf-8" http-equiv="encoding">
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Andres Chang</title>
+  <title>Andres Chang | chaos.17.01</title>
   <link rel="stylesheet" type="text/css" href="../css/style.css"/>
   <link rel="stylesheet" type="text/css" href="../css/animate.css"/>
   <link rel="stylesheet" type="text/css" href="../css/lightbox.css"/>
-  <link href="https://fonts.googleapis.com/css?family=Arimo:r,b,i" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Arimo:r,b,i|Crimson+Text|Roboto+Mono:300" rel="stylesheet">
 </head>
 <body>
-  <div class="container">
+  <div id="container">
     <div id = 'fixed'>
       <div id = 'header'>
         <div id = 'siteName' class = 'animate' ><a href = '/'>ANDRES CHANG</a></div>
-        <!-- <a id = 'siteName' class = 'animate' href = '/'>ANDRES CHANG</a> -->
       </div>
       <div class = 'sidebarSlide sidebarMouseOut'>
         <div id = 'sidebar'>
           <div id = 'menu'>
-            <div id = 'news' class = 'sidebarItem'>
-              <a href = '/news' style='text-decoration: none; color: #000000;'>News</a>
+            <div id = 'about' class = 'sidebarItem'>
+              <a href = '/about' style='text-decoration: none; color: #000000;'>About</a>
             </div>
             <div id = 'projectList' class = 'sidebarItem'>
               <ul>
                 <li style = 'font-weight: bold; padding-bottom: 6px;'>Projects</li>
-                <li style = 'padding-bottom: 6px;  cursor: pointer; ' class = 'iHide'><i id = 'plusFilter'>- Filter</i></li>
+                <li style = 'padding-bottom: 6px;  cursor: pointer; '><i id = 'plusFilter'>- Filter</i></li>
                 <li id="businessAsUsual"><a href = '/business-as-usual' class = 'animate pTitle climate data drawing'>Business as Usual: 1967-2067</a></li>
-                <li id="arcticTimeline"><a href = '/arctic-timeline' class = 'animate pTitle climate'>An Arctic Timeline</a></li>
+                <li id="arcticTimeline"><a href = '/arctic-timeline' class = 'animate pTitle climate data'>An Arctic Timeline</a></li>
                 <li id="eternalOcean"><a href = '/the-eternal-ocean' class = 'animate pTitle climate construction'>the eternal ocean</a></li>
                 <li id="eternalOceanPortal"><a href = '/the-eternal-ocean-portal' class = 'animate pTitle climate construction'>the eternal ocean (portal)</a></li>
                 <li id="chaos1701"><a href = '/chaos-17-01' class = 'animate pTitle climate data drawing construction'><i>chaos.17.01</i></a></li>
                 <li id="arcticSeaIce"><a href = '/arctic-sea-ice' class = 'animate pTitle climate data'>Investigating patterns of Arctic sea ice loss</a></li>
-                <li id="mythologies"><a href = '/mythologies' class = 'animate pTitle climate drawing'>Mythologies</a></li>
+                <li id="worksOnPaper"><a href = '/works-on-paper' class = 'animate pTitle drawing'>Works on paper</a></li>
                 <li id="hustle"><a href = '/hustle' class = 'animate pTitle construction'>Hustle!</a></li>
               </ul>
             </div>
-            <div id = 'about' class = 'sidebarItem'>
-              <a href = '/about' style='text-decoration: none; color: #000000;'>About</a>
+            <div id = 'archive' class = 'sidebarItem'>
+              <a href = '/archive' style='text-decoration: none; color: #000000;'>Archive</a>
             </div>
           </div>
           <div id = 'filter' class = 'fSlideLeft animate'>
@@ -61,9 +60,8 @@
   <script type="application/javascript" src="../js/lightbox-plus-jquery.js"></script>
   <script type="application/javascript" src="../js/filter.js"></script>
   <script type="application/javascript">
-    // EDIT PROJECT TAGS
     $( "#main").find(".proj").load("chaos-17-01.html" );
-    setProjectPage("#chaos1701",["#climate", "#construction", "#drawing", "#data"])
+    setProjectPage("#chaos1701",["#climate", "#construction", "#drawing", "#data"]);
 
   </script>
 </body>

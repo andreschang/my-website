@@ -4,6 +4,8 @@
   -moz-transition: all 0.2s ease;
   -o-transition: all 0.2s ease;
   transition: all 0.2s ease;
+/*  -webkit-font-smoothing: subpixel-antialiased;
+  font-smoothing: subpixel-antialiased;*/
 }
 
 @keyframes slideOver {
@@ -23,11 +25,10 @@
   animation-name: slideOver;
   -webkit-animation-fill-mode: both;
   animation-fill-mode: both;
-  -webkit-animation-duration: 0.3s;
-  animation-duration: 0.3s;
+  -webkit-animation-duration: 0.2s;
+  animation-duration: 0.2s;
   animation-timing-function: ease-in;
   -webkit-animation-timing-function: ease-in;
-  pointer-events: none;
 }
 
 .slideVertical {
@@ -37,29 +38,6 @@
   -o-transform: rotate(90deg) translate(-27px);
   transform: rotate(90deg) translate(-27px);
   width: 400px;
-}
-
-@keyframes mainSlideOver {
-  from {
-    -webkit-transform: translate3d(0, 0, 0);
-    transform: translate3d(0, 0, 0);
-  }
-
-  to {
-    -webkit-transform: translate3d(-30.2%, 0, 0);
-    transform: translate3d(-30.2%, 0, 0);
-  }
-}
-
-.mainSlideOver {
-  -webkit-animation-name: mainSlideOver;
-  animation-name: mainSlideOver;
-  -webkit-animation-fill-mode: both;
-  animation-fill-mode: both;
-  -webkit-animation-duration: 0.3s;
-  animation-duration: 0.3s;
-  animation-timing-function: ease-in;
-  -webkit-animation-timing-function: ease-in;
 }
 
 @keyframes slideBack {
@@ -79,31 +57,8 @@
   animation-name: slideBack;
   -webkit-animation-fill-mode: both;
   animation-fill-mode: both;
-  -webkit-animation-duration: 0.3s;
-  animation-duration: 0.3s;
-  animation-timing-function: ease-in;
-  -webkit-animation-timing-function: ease-in;
-}
-
-@keyframes mainSlideBack {
-  from {
-    -webkit-transform: translate3d(-30.2%, 0, 0);
-    transform: translate3d(-30.2%, 0, 0);
-  }
-
-  to {
-    -webkit-transform: translate3d(0, 0, 0);
-    transform: translate3d(0, 0, 0);
-  }
-}
-
-.mainSlideBack {
-  -webkit-animation-name: mainSlideBack;
-  animation-name: mainSlideBack;
-  -webkit-animation-fill-mode: both;
-  animation-fill-mode: both;
-  -webkit-animation-duration: 0.3s;
-  animation-duration: 0.3s;
+  -webkit-animation-duration: 0.2s;
+  animation-duration: 0.2s;
   animation-timing-function: ease-in;
   -webkit-animation-timing-function: ease-in;
 }
@@ -129,6 +84,7 @@
   -webkit-animation-duration: 0.2s;
   animation-duration: 0.2s;
   -webkit-animation-timing-function: ease-in;
+  pointer-events: none;
 }
 
 @keyframes fSlideRight {
@@ -168,85 +124,16 @@
   }
 }
 
-    @keyframes mainSlideBack {
-      from {
-        -webkit-transform: translate3d(-28%, 0, 0);
-        transform: translate3d(-28%, 0, 0);
-    }
-}
-    @keyframes mainSlideOver {
-        to {
-    -webkit-transform: translate3d(-28%, 0, 0);
-    transform: translate3d(-28%, 0, 0);
-  }
-}
-
-  @keyframes fmSlideLeft {
-    from {
-      -webkit-transform: translate3d(0, 0, 0);
-      transform: translate3d(0, 0, 0);
-    }
-
-    to {
-      -webkit-transform: translate3d(-10.2%, 0, 0);
-      transform: translate3d(-10.2%, 0, 0);
-    }
+  #main.fmSlideLeft {
+    left: 25%;
   }
 
-  .fmSlideLeft {
-    -webkit-animation-name: fmSlideLeft;
-    animation-name: fmSlideLeft;
-    -webkit-animation-fill-mode: both;
-    animation-fill-mode: both;
-    -webkit-animation-duration: 0.3s;
-    animation-duration: 0.3s;
-    animation-timing-function: ease-in;
-    -webkit-animation-timing-function: ease-in;
+  #main.ffwSlideRight {
+    left: 30%;
   }
 
-  @keyframes fmSlideRight {
-    from {
-      -webkit-transform: translate3d(-10.2%, 0, 0);
-      transform: translate3d(-10.2%, 0, 0);
-    }
-
-    to {
-      -webkit-transform: translate3d(0, 0, 0);
-      transform: translate3d(0, 0, 0);
-    }
+  #main.ffwSlideLeft {
+    left: 23%;
   }
 
-  .fmSlideRight {
-    -webkit-animation-name: fmSlideRight;
-    animation-name: fmSlideRight;
-    -webkit-animation-fill-mode: both;
-    animation-fill-mode: both;
-    -webkit-animation-duration: 0.3s;
-    animation-duration: 0.3s;
-    animation-timing-function: ease-in;
-    -webkit-animation-timing-function: ease-in;
-  }
-
-  @keyframes mainHybridSlideOver {
-    from {
-      -webkit-transform: translate3d(-10.2%, 0, 0);
-      transform: translate3d(-10.2%, 0, 0);
-    }
-
-    to {
-      -webkit-transform: translate3d(-28%, 0, 0);
-      transform: translate3d(-28%, 0, 0);
-    }
-  }
-
-  .mainHybridSlideOver {
-    -webkit-animation-name: mainHybridSlideOver;
-    animation-name: mainHybridSlideOver;
-    -webkit-animation-fill-mode: both;
-    animation-fill-mode: both;
-    -webkit-animation-duration: 0.3s;
-    animation-duration: 0.3s;
-    animation-timing-function: ease-in;
-    -webkit-animation-timing-function: ease-in;
-  }
   }
