@@ -204,7 +204,7 @@ function filterProjects(id) {
 
 
 function hoverIcon() {
-  $('.sidebarIcon').mouseover( function(event) {
+  $('.sidebarIcon, #sidebarIconContainer').mouseover( function(event) {
     var stateOn = stateModule.getState();
     if (stateOn == "hidden") {
       console.log('show menu');
@@ -229,34 +229,6 @@ function hoverIcon() {
         stateModule.changeState("hidden");
       }, 300)};
     });
-
-  var mainSwipe = new Hammer(container);
-
-  mainSwipe.on("swipeleft", function(event) {
-    var stateOff = stateModule.getState();
-    if (stateOff == "shown") {
-      // stateModule.changeState("transition");
-      // $(".sidebarSlide").removeClass('slideBack');
-      sidebarSlideLeft();
-      setTimeout( function() {
-        stateModule.changeState("hidden");
-      }, 300)};
-    });
-
-  mainSwipe.on("swiperight", function(event) {
-    var stateOn = stateModule.getState();
-    if (stateOn == "hidden") {
-      console.log('show menu');
-      sidebarSlideRight();
-      // stateModule.changeState("transition");
-      // $(".sidebarSlide").addClass('slideBack');
-      // $(".sidebarSlide").removeClass('slideOver');
-      // $("#sidebarIconContainer").removeClass('sidebarShow');
-      setTimeout( function() {
-        stateModule.changeState("shown");
-      }, 300);
-    }
-  });
 }
 
 // State module

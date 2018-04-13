@@ -229,17 +229,14 @@
   display: inline-block;
   top:0;
   left: 0;
-  width: 3.5%;
-  height: 100px;
+  width: 14%;
+  height: 600px;
   opacity: 0;
 }
 
 .sidebarShow {
   opacity: .5 !important;
-}
-
-.sidebarIcon {
-  pointer-events: fill !important;
+  pointer-events: all !important;
 }
 
 .about img {
@@ -319,5 +316,9 @@
     float: right; 
     padding-left: 15px;
   }
+
+  #sidebarIconContainer {
+    width: 3.5%;
+    }
 
 }
