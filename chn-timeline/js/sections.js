@@ -472,7 +472,7 @@ function display(data) {
 }
 
 // load data and display
-d3.tsv('Timeline events - Final Spreadsheet.tsv', display);
+d3.tsv('Spreadsheet.tsv', display);
 // d3.tsv('timeline.5.2.tsv', display);
 
 });
