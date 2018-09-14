@@ -75,6 +75,14 @@
   pointer-events: all;
 }
 
+.fSlideLeft {
+  pointer-events: none !important;
+}
+
+.fSlideRight {
+  pointer-events: all !important;
+}
+
 #menuIcon {
   width: 100px;
   float: left;
