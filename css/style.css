@@ -253,15 +253,23 @@
 }
 
 .arcPost, .newsPost {
-  padding-bottom: 70px;
+  padding-bottom: 50px;
 }
 
 .arcPost img, .newsPost img {
   margin-top: 25px;
+  margin-bottom: 30px;
 }
 
 .arcPost li, .newsPost li {
   margin: 12px;
+}
+
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
 }
 
 /*.pBox {
