@@ -172,7 +172,7 @@
   font-size: 1.1em;
 }
 
-.proj.archive h1 {
+.proj.archive h1, .proj.news h1 {
   font-size: 1.7em;
   /*font-weight: bold;*/
   line-height: 1.05em;
@@ -180,7 +180,7 @@
   letter-spacing: -0.02em;
 }
 
-.proj.archive h2 {
+.proj.archive h2, .proj.news h2 {
   line-height: 0.8em;
 }
 
@@ -252,12 +252,16 @@
   left: 40%;
 }
 
-.arcPost {
-  padding-bottom: 60px;
+.arcPost, .newsPost {
+  padding-bottom: 70px;
 }
 
-.arcPost img {
+.arcPost img, .newsPost img {
   margin-top: 25px;
+}
+
+.arcPost li, .newsPost li {
+  margin: 12px;
 }
 
 /*.pBox {
