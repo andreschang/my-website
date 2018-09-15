@@ -55,8 +55,8 @@
         <div id = 'sidebarIconContainer' class = 'animate' style = 'opacity: 0;'></div>
       </div>
     </div>
-    <div id = 'main' class = 'animate fixedWidth'>
-      <div class = 'archive proj'></div>
+    <div id = 'main' class = 'animate mainSlide'>
+      <div class = 'archive animate proj fSlideLeft'></div>
     </div>
   </div>
   <script type="application/javascript" src="../js/svg.js"></script>
@@ -66,6 +66,7 @@
   <script type="application/javascript">
     // EDIT PROJECT TAGS
     $( "#main").find(".archive").load("archive.html" );
+    setOtherPage('.archive')
   </script>
   </script>
 </body>

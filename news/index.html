@@ -8,6 +8,11 @@
   <link rel="stylesheet" type="text/css" href="../css/animate.css"/>
   <link rel="stylesheet" type="text/css" href="../css/lightbox.css"/>
   <link href="https://fonts.googleapis.com/css?family=Arimo:r,b,i,700i|Crimson+Text|Roboto+Mono:300" rel="stylesheet">
+  <style>
+  li:last-child {
+   list-style-type: none; 
+  }
+</style>
 </head>
 <body>
   <div id="container">
@@ -55,8 +60,8 @@
         <div id = 'sidebarIconContainer' class = 'animate' style = 'opacity: 0;'></div>
       </div>
     </div>
-    <div id = 'main' class = 'animate fixedWidth'>
-      <div class = 'news proj'></div>
+    <div id = 'main' class = 'animate mainSlide'>
+      <div class = 'news animate proj fSlideLeft'></div>
     </div>
   </div>
   <script type="application/javascript" src="../js/svg.js"></script>
@@ -66,6 +71,7 @@
   <script type="application/javascript">
     // EDIT PROJECT TAGS
     $( "#main").find(".news").load("news.html" );
+    setOtherPage('.news')
   </script>
   </script>
 </body>
