@@ -47,7 +47,7 @@ function setOtherPage(otherClass) {
     window.onload = function(){
       $( "#main").find(otherClass).removeClass('fSlideLeft')
       $( "#main").find(otherClass).addClass('fSlideRight')
-      $('#filter').addClass('fSlideRight')
+      filterSlideRight()
       hoverIcon();
     }
 }
