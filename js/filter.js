@@ -174,8 +174,8 @@ function filterSlideLeft() {
   $('#plusFilter').text('+ Filter')
   $(".mainSlide").removeClass('fmSlideRight');
   $(".mainSlide").addClass('fmSlideLeft');
-  // $(".fixedWidth").removeClass('ffwSlideRight');
-  // $(".fixedWidth").addClass('ffwSlideLeft');
+  $(".fixedWidth").removeClass('ffwSlideRight');
+  $(".fixedWidth").addClass('ffwSlideLeft');
   $("#main").not($(".mainVid")).width('58%');
 }
 
@@ -185,8 +185,8 @@ function filterSlideRight() {
   $('#plusFilter').text('- Filter')
   $(".mainSlide").removeClass('fmSlideLeft');
   $(".mainSlide").addClass('fmSlideRight');
-  // $(".fixedWidth").removeClass('ffwSlideLeft');
-  // $(".fixedWidth").addClass('ffwSlideRight');
+  $(".fixedWidth").removeClass('ffwSlideLeft');
+  $(".fixedWidth").addClass('ffwSlideRight');
   $("#main").not($(".mainVid")).width('50%');
 }
 
