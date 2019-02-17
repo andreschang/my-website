@@ -6,6 +6,7 @@ setupInteraction()
 
 // Functions
 // Set video iFrame size
+var selectedFilters = []
 
 function setProjectPage(pName, pFilters) {
     window.onload = function(){
@@ -15,7 +16,6 @@ function setProjectPage(pName, pFilters) {
       $( "#main").find(".proj").addClass('fSlideRight')
       hoverIcon()
       filterSlideRight()
-      var selectedFilters = []
       for (i=0; i < (pFilters.length); i++) {
         $(pFilters[i]).find("div").addClass('fOver');
         // $(pFilters[i]).find("div").click();
@@ -84,7 +84,6 @@ function setupInteraction() {
   // Filter by combination of tags
   // And other mouseover functionality
   
-  var selectedFilters = []
   $(document).ready(function(){
     $("#filter").find("li").click(function(){
       $(this).find("div").toggleClass("fSelect");
