@@ -192,6 +192,8 @@
   line-height: 0.8em;
 }
 
+h2.mid {padding-top: 3.9em !important; padding-bottom: 0em;}
+
 .proj img {
   margin-top: 65px;
   width: 100%;
