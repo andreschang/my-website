@@ -271,6 +271,11 @@ h2.mid {padding-top: 3.9em !important; padding-bottom: 0em;}
   margin-bottom: 30px;
 }
 
+.pdfEmbed {
+  margin-top: 40px;
+  margin-bottom: 30px;
+}
+
 .arcPost li, .newsPost li {
   margin: 12px;
 }
@@ -287,6 +292,7 @@ h2.mid {padding-top: 3.9em !important; padding-bottom: 0em;}
   padding: 2px;
   opacity: 0;
 }*/
+
 
 @media screen and (min-width: 40.5em) { 
 
