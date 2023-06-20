@@ -1,23 +1,15 @@
 <style>
 
-ul.no-bullets {
-  list-style-type: none; /* Remove bullets */
-  padding: 0; /* Remove padding */
-/*  margin: 0; /* Remove margins */*/
+#TopSection {
+/*  display: inline-block;*/
+display: flex;
+flex-flow: row wrap;
 }
 
-.no-bullets li {
-  margin-bottom: 0.5em;
-  line-height: 1.3em;
-}
-
-#booklinks {
-  margin-top: 50px;
-  overflow: hidden;
-}
-
-#booklinks p {
-  padding-top: 2em;
+figcaption {
+  margin: 15px 0 0 10px;
+  font-family: 'Crimson Text', serif;
+  font-size: 1em;
 }
 
 sub {
@@ -30,61 +22,109 @@ sub {
 
 @media screen and (min-width: 40.5em) { 
 
-  #content2 {
-    margin-top: 65px;
-  }
+figure {
+/*  display: inline-block;*/
+  float: left;
+  width: 42%;
+  margin: 0;
+}
 
-  #coverphoto {
+#TopSection {
+  margin-top: 65px;
+}
+
+#MainText {
+  order: 2;
+  float: left;
+  margin-left: 8%;
+  width: 38%;
+}
+
+ #coverphoto {
+  order: 1;
     margin-top: 0 !important;
+ }
+
+.detail {
+    width: 90% !important;
     float: left;
-    width: 60%;
-    margin-right: 80px;
-  }
-
-  #booklinks {
-  margin-top: 0px;
-  }
-
-  .detail {
-    width: 45% !important;
-  }
-
-  .left {
-    margin-right: 3%;
-  }
+}
 }
 
 </style>
 
 <body>
   <h1>A New Plan to Capture Greenhouse Gas</h1>
-    <h2 style='padding-bottom:0em'>Hardcover book, 8.75 x 11.25", 60 pages.</h2>
-    <h2>Published February 2023, <a href='https://magazine.scienceforthepeople.org/' target='_blank' style='color: unset; text-decoration: unset'>Science for the People.</a></h2>
 
-  <div>
-    <!-- <p>My interest in CO<sub>2</sub> disposal was catalyzed by several observations. What struck me first was the immense scale at which CO<sub>2</sub> disposal occurs in computer simulations. What struck me next was the irony of invoking pipelines—a common element of CO<sub>2</sub> disposal—to solve the climate crisis: pipelines being a vehicle for land theft and water pollution, as well as carbon-dense fuel. What converted my interest to an obsession was learning that certain types of CO<sub>2</sub> disposal were illegal under international law until energy industry proponents, who viewed this as hardly an inconvenience, decided to revise the law.</p> -->
+  <div id='TopSection'>
+      <div id='MainText'>
+          <h2 style='padding-bottom:0em; margin-top: 0;'>Hardcover book, 8.75 x 11.25", 60 pages.</h2>
+          <h2>Published February 2023, <a href='https://magazine.scienceforthepeople.org/' target='_blank' style='color: unset; text-decoration: unset'>Science for the People.</a></h2>
+          <p><em>A New Plan to Capture Greenhouse Gas</em> documents how growth-minded politicians, industrialists, and engineers have spent decades advocating for CO<sub>2</sub> removal, at the expense of real climate solutions. Surprising stories surface: a failed &ldquo;CO<sub>2</sub> dump&rdquo; experiment off the coast of Hawaii, an MIT partnership with the state-run oil giant Saudi Aramco, a campaign to deregulate pollution on the high seas, and more.</p>
 
-    <p><em>A New Plan to Capture Greenhouse Gas</em> documents how growth-minded politicians, industrialists, and engineers have spent decades advocating for CO<sub>2</sub> removal, at the expense of real climate solutions. Surprising stories surface: a failed &ldquo;CO<sub>2</sub> dump&rdquo; experiment off the coast of Hawaii, an MIT partnership with the state-run oil giant Saudi Aramco, a campaign to deregulate pollution on the high seas, and more.</p>
+          <p>These stories are anchored by two drawing series, <em>the Green Man</em> and <em>the London Convention Drawings</em>. In each series, important documents from the decades-long history of CO<sub>2</sub> disposal have been annotated, drawn over, and arranged into timelines. The book also features an introduction, an essay, and a conversation with the physicist and activist Ansar Fayyazuddin.</p>
 
-    <p>These stories are anchored by two drawing series, <em>the Green Man</em> and <em>the London Convention Drawings</em>. In each series, important documents from the decades-long history of CO<sub>2</sub> disposal have been annotated, drawn over, and arranged into timelines. The book also features an introduction, an essay, and a conversation with the physicist and activist Ansar Fayyazuddin.</p>
+          <p style='margin-top: 2.3em'>Order the book <a href='https://simplecirc.com/69146167/item/7374/a-new-plan-to-capture-greenhouse-gas-an-artist-s-book' target='_blank'>here</a></p>
+          <p>Artist's talk: <a href='https://youtu.be/QR6SnSpNRfY' target='_blank'>A New Plan to Capture Greenhouse Gas: Book Launch with Andres Chang and Index Space</a>, February 2023</p>
+          <p>Download the <a href='pdfs/A New Plan to Capture GHG - 1 - Introduction.pdf' target='_blank'>introduction</a></p>
+      </div>
+      <figure>
+        <a href='images/NewPlan-web-01.jpg' data-lightbox='cover'><img src='images/NewPlan-web-01.jpg'/ id='coverphoto'></a>
+        <figcaption>Click any image to switch to gallery view</figcaption>
+      </figure>
   </div>
 
-<div id='content2'>
-  <a href='images/NewPlan-web-01.jpg' data-lightbox='cover'><img src='images/NewPlan-web-01.jpg'/ id='coverphoto'></a>
-  <div id='booklinks'>
-    <p>View the complete drawing series:</p>
-      <ul class='no-bullets'>
-        <li><a href='images/NewPlan-web-02.jpg' data-lightbox='GreenMan'>The Green Man</a></li>
-        <!-- <li><a href='images/Green_Man-01-web.jpg' data-lightbox='GreenMan'>The Green Man</a></li> -->
-        <li><a href='images/NewPlan-web-06.jpg' data-lightbox='LCDrawings'>The London Convention Drawings</a></li>
-      </ul>
+  <div id='ImageScroll' style='width: 100%'>
+    <a href='images/NewPlan-web-02.jpg' data-lightbox='cover'><img src='images/NewPlan-web-02.jpg' class='detail'/></a>
+    <a href='images/NewPlan-web-03.jpg' data-lightbox='cover'><img src='images/NewPlan-web-03.jpg' class='detail'></a>
+    <a href='images/NewPlan-web-04.jpg' data-lightbox='cover'><img src='images/NewPlan-web-04.jpg' class='detail'/></a>
+    <a href='images/NewPlan-web-05.jpg' data-lightbox='cover'><img src='images/NewPlan-web-05.jpg' class='detail'/></a>
+    <a href='images/NewPlan-web-06.jpg' data-lightbox='cover'><img src='images/NewPlan-web-06.jpg' class='detail'/></a>
+    <a href='images/NewPlan-web-07.jpg' data-lightbox='cover'><img src='images/NewPlan-web-07.jpg' class='detail'></a>
+    <a href='images/NewPlan-web-08.jpg' data-lightbox='cover'><img src='images/NewPlan-web-08.jpg' class='detail'/></a>
+    <a href='images/NewPlan-web-09.jpg' data-lightbox='cover'><img src='images/NewPlan-web-09.jpg' class='detail'/></a>
+    <a href='images/NewPlan-web-10.jpg' data-lightbox='cover'><img src='images/NewPlan-web-10.jpg' class='detail'/></a>
+    <a href='images/NewPlan-web-11.jpg' data-lightbox='cover'><img src='images/NewPlan-web-11.jpg' class='detail'/></a>
+    <a href='images/NewPlan-web-12.jpg' data-lightbox='cover'><img src='images/NewPlan-web-12.jpg' class='detail'/></a>
+    <a href='images/NewPlan-web-13.jpg' data-lightbox='cover'><img src='images/NewPlan-web-13.jpg' class='detail'></a>
+    <a href='images/NewPlan-web-14.jpg' data-lightbox='cover'><img src='images/NewPlan-web-14.jpg' class='detail'/></a>
+    <a href='images/NewPlan-web-15.jpg' data-lightbox='cover'><img src='images/NewPlan-web-15.jpg' class='detail'/></a>
 
-    <p>Download writing from the book:</p>
-      <ul class='no-bullets'>
-        <li><a href='pdfs/A New Plan to Capture GHG - 1 - Introduction.pdf' target='_blank'>Introduction</a></li>
-        <li><a href='pdfs/A New Plan to Capture GHG - 2 - Essay.pdf' target='_blank'>A New Plan to Capture Greenhouse Gas</a></li>
-        <li><a href='pdfs/A New Plan to Capture GHG - 3 - Conversation with Ansar.pdf' target='_blank'>A Conversation With My Friend Ansar Fayyazuddin</a></li>
-      </ul>
+</div>
+
+<!-- HERE
+
+    <div style='margin-top:60px;'>
+    <div>
+        <a href='images/NewPlan-web-01.jpg' data-lightbox='cover'><img src='images/NewPlan-web-01.jpg'/ id='coverphoto'></a>
+    </div>
+    <div style='overflow: hidden;'>
+        <h2 style='padding-bottom:0em; margin-top: 0;'>Hardcover book, 8.75 x 11.25", 60 pages.</h2>
+        <h2>Published February 2023, <a href='https://magazine.scienceforthepeople.org/' target='_blank' style='color: unset; text-decoration: unset'>Science for the People.</a></h2>
+
+        <p><em>A New Plan to Capture Greenhouse Gas</em> documents how growth-minded politicians, industrialists, and engineers have spent decades advocating for CO<sub>2</sub> removal, at the expense of real climate solutions. Surprising stories surface: a failed &ldquo;CO<sub>2</sub> dump&rdquo; experiment off the coast of Hawaii, an MIT partnership with the state-run oil giant Saudi Aramco, a campaign to deregulate pollution on the high seas, and more.</p>
+
+        <p>These stories are anchored by two drawing series, <em>the Green Man</em> and <em>the London Convention Drawings</em>. In each series, important documents from the decades-long history of CO<sub>2</sub> disposal have been annotated, drawn over, and arranged into timelines. The book also features an introduction, an essay, and a conversation with the physicist and activist Ansar Fayyazuddin.</p>
+
+        <p style='margin-top: 2.3em'>Order the book <a href='https://simplecirc.com/69146167/item/7374/a-new-plan-to-capture-greenhouse-gas-an-artist-s-book' target='_blank'>here</a></p>
+        <p>Artist's talk: <a href='https://youtu.be/QR6SnSpNRfY' target='_blank'>A New Plan to Capture Greenhouse Gas: Book Launch with Andres Chang and Index Space</a>, February 2023</p>
+        <p>Download the <a href='pdfs/A New Plan to Capture GHG - 1 - Introduction.pdf' target='_blank'>introduction</a></p>
+        <p style='margin-top: 2.3em;'>Click any image to switch to gallery view</p>
+
+
+HERE -->
+        <!-- <div id='booklinks'> -->
+<!--         <p>Order the book <a href='https://simplecirc.com/69146167/item/7374/a-new-plan-to-capture-greenhouse-gas-an-artist-s-book' target='_blank'>here</a></p>
+
+        <p>Download the <a href='pdfs/A New Plan to Capture GHG - 1 - Introduction.pdf' target='_blank'>introduction</a></p>
+
+            <p>Artist's talk: <a href='https://youtu.be/QR6SnSpNRfY' target='_blank'>A New Plan to Capture Greenhouse Gas: Book Launch with Andres Chang and Index Space</a>, February 2023</p> -->
+        <!-- </div> -->
+
+
+<!--     <div id='booklinks'>
+
+    <p>Download the <a href='pdfs/A New Plan to Capture GHG - 1 - Introduction.pdf' target='_blank'>introduction</a></p>
 
     <p>Artist's talk:</p>
       <ul class='no-bullets'>
@@ -92,26 +132,13 @@ sub {
       </ul>
 
     <p>Order the book <a href='https://simplecirc.com/69146167/item/7374/a-new-plan-to-capture-greenhouse-gas-an-artist-s-book' target='_blank'>here</a></p>
+
+  </div> -->
+
   </div>
 </div>
-  <a href='images/NewPlan-web-detail-01a.jpg' data-lightbox='cover'><img src='images/NewPlan-web-detail-01a.jpg' class='detail left'/></a>
-  <a href='images/NewPlan-web-detail-02a.jpg' data-lightbox='cover'><img src='images/NewPlan-web-detail-02a.jpg' class='detail'></a>
-  <a href='images/NewPlan-web-detail-03.jpg' data-lightbox='cover'><img src='images/NewPlan-web-detail-03.jpg' class='detail left'/></a>
-  <a href='images/NewPlan-web-detail-04.jpg' data-lightbox='cover'><img src='images/NewPlan-web-detail-04.jpg' class='detail'/></a>
-
-
-<a href='images/NewPlan-web-03.jpg' data-lightbox='GreenMan'></a>
-<a href='images/NewPlan-web-04.jpg' data-lightbox='GreenMan'></a>
-<a href='images/NewPlan-web-05.jpg' data-lightbox='GreenMan'></a>
-<a href='images/NewPlan-web-07.jpg' data-lightbox='LCDrawings'></a>
-<a href='images/NewPlan-web-08.jpg' data-lightbox='LCDrawings'></a>
-<a href='images/NewPlan-web-09.jpg' data-lightbox='LCDrawings'></a>
-<a href='images/NewPlan-web-10.jpg' data-lightbox='LCDrawings'></a>
-<a href='images/NewPlan-web-11.jpg' data-lightbox='LCDrawings'></a>
-<a href='images/NewPlan-web-12.jpg' data-lightbox='LCDrawings'></a>
-<a href='images/NewPlan-web-13.jpg' data-lightbox='LCDrawings'></a>
-<a href='images/NewPlan-web-14.jpg' data-lightbox='LCDrawings'></a>
-<a href='images/NewPlan-web-15.jpg' data-lightbox='LCDrawings'></a>
+<div>
+</div>
 
 </div>
 
