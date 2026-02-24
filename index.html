@@ -3,71 +3,59 @@
 <head>
   <meta content="utf-8" http-equiv="encoding">
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Andres Chang</title>
-  <link rel="stylesheet" type="text/css" href="css/style.css"/>
-  <link rel="stylesheet" type="text/css" href="css/animate.css"/>
-  <link rel="stylesheet" type="text/css" href="css/lightbox.css"/>
-  <link href="https://fonts.googleapis.com/css?family=Arimo:r,b,i|Crimson+Text|Roboto+Mono:300" rel="stylesheet">
+  <title>Andres Chang | Placeholder</title>
+  <link href="https://fonts.googleapis.com/css?family=Arimo:r,b,i,700i|Crimson+Text|Roboto+Mono:300" rel="stylesheet">
 </head>
-<body>
-  <div id="container">
-    <div id = 'fixed'>
-      <div id = 'header'>
-        <div id = 'siteName' class = 'animate' ><a href = '/'>ANDRES CHANG</a></div>
-      </div>
-      <div class = 'sidebarSlide sidebarMouseOut'>
-        <div id = 'sidebar'>
-          <div id = 'menu'>
-            <div id = 'about' class = 'sidebarItem'>
-              <a href = '/about' style='text-decoration: none; color: #000000;'>About</a>
-            </div>
-            <div id = 'news' class = 'sidebarItem'>
-              <a href = '/news' style='text-decoration: none; color: #000000;'>News</a>
-            </div>
-            <div id = 'projectList' class = 'sidebarItem'>
-              <ul>
-                <li style = 'font-weight: bold; padding-bottom: 6px;'>Projects</li>
-                <li style = 'padding-bottom: 6px;  cursor: pointer; '><i id = 'plusFilter'>+ Filter</i></li>
-                <li id="newPlan"><a href = '/new-plan' class = 'animate hover click pTitle climate drawing'>A New Plan to Capture Greenhouse Gas</a></li>
-                <li id="exactlyWhere"><a href = '/exactly-where' class = 'animate hover click pTitle climate data drawing'>Exactly Where You Had Fallen</a></li>
+<style>
+    #main {
+      max-width: 620px;
+      margin: 80px auto 80px 15%;
+      padding: 0 20px;
+      line-height: 1.7;
+      font-family: 'Arimo', sans-serif;
+      font-size: 1em;
+    }
 
-                <li id="eternalOcean"><a href = '/the-eternal-ocean' class = 'animate hover click pTitle climate construction'>The Eternal Ocean</a></li>
-                <li id="eternalOceanPortal"><a href = '/the-eternal-ocean-portal' class = 'animate hover click pTitle climate construction'>The Eternal Ocean (Portal)</a></li>
-                <li id="chaos1701"><a href = '/chaos-17-01' class = 'animate hover click pTitle climate data drawing construction'>chaos.17.01</a></li>
-<!--                 <li id="arcticSeaIce"><a href = '/arctic-sea-ice' class = 'animate hover click pTitle climate data'>Investigating patterns of Arctic sea ice loss</a></li> -->
-                <li id="worksOnPaper"><a href = '/works-on-paper' class = 'animate hover click pTitle drawing'>Works on paper</a></li>
-                <li id="hustle"><a href = '/hustle' class = 'animate hover click pTitle construction'>Hustle!</a></li>
-              </ul>
-            </div>
-            <div id = 'archive' class = 'sidebarItem'>
-              <a href = '/archive' style='text-decoration: none; color: #000000;'>Archive</a>
-            </div>
-          </div>
-          <div id = 'filter' class = 'fSlideLeft animate'>
-            <ul>
-              <li style = 'color:#000000; padding-top:12px; cursor: default;'>Filter by:</li>
-              <li id = 'climate'><div class = 'animate hover'>Climate</div></li>
-              <li id = 'construction'><div class = 'animate hover'>Construction</div></li>
-              <li id = 'drawing'><div class = 'animate hover'>Drawing</div></li>
-              <li id = 'data'><div class = 'animate hover'>Data</div></li>
-            </ul>
-          </div>
-        </div>
-        <div id = 'sidebarIconContainer' class = 'animate' style = 'opacity: 0;'></div>
-      </div>
-    </div>
-    <div id = 'main' class = 'animate mainVid' style = 'overflow-y: hidden !important; padding-bottom: 0px;'>
-      <img id = 'mainVid' style = 'width: 90% !important' src="images/business_as_usual_website_short.gif"/>
-<!--       <video id = 'mainVid' width = 90% autoplay loop>
-        <source src="images/business_as_usual_website_short.mp4" type="video/mp4">
-      </video> -->
-    </div>
+    #main p {
+      margin-bottom: 1.2em;
+    }
+
+    #main p strong {
+      display: block;
+      margin-top: 1.6em;
+      margin-bottom: 0.2em;
+    }
+
+    #main p em {
+      font-size: 0.9em;
+      color: #888;
+    }
+
+    #siteName {
+      font-size: 1.3em;
+      word-spacing: 0.25em;
+      display: block;
+      transform-origin: 0% 100%;
+      position: relative;
+      z-index: 999;
+      text-decoration: none;
+      color:inherit;
+      pointer-events: all;
+    }
+
+  </style>
+
+<body>
+
+  <div id="main">
+  <div id = 'siteName' class = 'animate' >ANDRES CHANG</div>
+  <p><strong>Biography</strong></p>
+  <p>I am a first-year Master of Environment and Sustainability student at the University of Toronto. Prior to beginning my graduate studies, I held research positions at two prominent non-profit environmental organizations. At the Science Based Targets initiative (2018-2022), a pioneering standard-setter and validator of corporate climate targets, I authored resources that established the scientific foundation for science-based emissions targets. Such targets now cover nearly half of global market capitalization. During my years at Greenpeace USA (2022-2025), I conducted research that informed campaigns advocating for halting the expansion of U.S. gas export infrastructure and protecting the right to protest.</p>
+  <p><strong>Current research</strong></p>
+  <p>My masters thesis research examines whether and how voluntary regulatory programs in the mining sector influence local contestation to mining projects. Separately, I am analyzing the social diffusion of community-scale conservation initiatives in the Peruvian Amazon under the PARLAP project.</p>
+  <p><em>Website under revision</em><br />
+  <em>For creative projects, <a href="main.html">go here</a></em></p>
+    
   </div>
-  <script type="application/javascript" src="js/svg.js"></script>
-  <script type="application/javascript" src="js/lightbox-plus-jquery.js"></script>
-  <script type="application/javascript" src="../js/hammer.min.js"></script>
-  <script type="application/javascript" src="js/filter.js"></script>
-  <script type="application/javascript">
-  </script>
 </body>
 </html>
